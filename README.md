@@ -20,8 +20,10 @@ The goal of this project is to design and simulate a UI-core transformer with th
 
 ### Winding Design
 - Calculated the number of turns (N) and core cross-sectional area (A) using:
-  - \( V_{rms} = 4.44 \times N \times f \times A \times B_{max} \)
-- Chose a maximum flux density \( B_{max} = 0.9 \) T and frequency \( f = 50 \) Hz.
+$$
+  V_{\text{rms}} = 4.44 \times N \times f \times A \times B_{\text{max}}
+  $$
+  - Chose a maximum flux density \( B_{max} = 0.9 \) T and frequency \( f = 50 \) Hz.
 
 ### Simulink Model Development
 - Built the transformer model in Simulink using **Simscape – Foundation Library** and **Magnetics** components.

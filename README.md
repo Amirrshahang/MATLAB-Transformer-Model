@@ -53,7 +53,7 @@ The following diagram illustrates the Simulink model of the transformer used in 
 
 ---
 
-### Contributors
+### Contributors:
 - Amir Shahang
 - Helia Zolghadr
 

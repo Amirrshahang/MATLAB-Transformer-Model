@@ -1,67 +1,62 @@
 # MATLAB-Transformer-Model
-This project aims to simulate a single-phase transformer using MATLAB and Simulink, focusing on magnetic circuit modeling, equivalent circuit extraction, and system behavior analysis under different load conditions.
+
+This repository presents a detailed simulation and analysis of a single-phase transformer using MATLAB and Simulink. The project involves modeling the magnetic circuit, determining winding specifications, and extracting the transformer's equivalent circuit through simulation.
+
+---
 
 ## 📚 Project Overview
-In this project, we design and simulate a transformer supplied by a 230V RMS AC source. The transformer uses a UI-type laminated core made of **Electrical-Steel-NGO-35PN250**, with its magnetic behavior fitted to a **BH curve** using MATLAB’s Curve Fitting Toolbox.
+The goal of this project is to design and simulate a UI-core transformer with the following key specifications:
+- **Primary Voltage**: 230V RMS
+- **Core Type**: UI laminated core (Electrical-Steel-NGO-35PN250)
+- **Core Magnetic Properties**: Characterized using BH curves fitted with MATLAB's Curve Fitting Toolbox.
 
-### 🔍 Objectives
-- **Simulate the magnetic circuit** of a transformer in Simulink’s Simscape and Foundation Library.
-- **Design winding specifications** (number of turns and cross-sectional area).
-- **Extract the equivalent circuit** of the transformer via open-circuit and short-circuit tests.
-- **Analyze the system’s behavior** with varying load resistances and observe current, flux, and voltage waveforms.
+---
 
-## 🛠️ Tools & Libraries
-- **MATLAB & Simulink**
-- **Simscape – Foundation Library**
-- **Curve Fitting Toolbox**
+## 📝 Design & Simulation Procedure
 
-## 📝 Implementation Steps
-1. **Core Selection**: Use a UI core with specified dimensions and material properties.
-2. **Magnetic Model**: Fit the core’s BH curve using exponential functions in MATLAB.
-3. **Design Calculations**:
-   - Determine primary and secondary winding specifications.
-   - Calculate core cross-sectional area based on flux density and voltage.
-4. **Simulink Model**:
-   - Build a magnetic circuit using Simscape’s Magnetics components.
-   - Include an Electromagnetic Converter (EC) linking electrical and magnetic domains.
-   - Add variable reluctance and MMF sources to represent nonlinear magnetic properties.
-5. **Load Testing**:
-   - Simulate open-circuit and short-circuit conditions.
-   - Adjust load resistance values and analyze waveforms.
-6. **Data Analysis**:
-   - Observe current and flux waveforms.
-   - Check if transformer ratio and flux density match design expectations.
-   - Consider leakage flux effects by adding parallel reluctances.
+### 1️⃣ Core Selection & Magnetic Characterization
+- Selected a UI-core with dimensions determined by the project requirements.
+- The core’s BH curve was extracted from provided data and mathematically fitted using exponential functions in MATLAB.
+
+### 2️⃣ Winding Design
+- Calculated the number of turns (N) and core cross-sectional area (A) using:
+  - \( V_{rms} = 4.44 \times N \times f \times A \times B_{max} \)
+- Chose a maximum flux density \( B_{max} = 0.9 \) T and frequency \( f = 50 \) Hz.
+
+### 3️⃣ Simulink Model Development
+- Built the transformer model in Simulink using **Simscape – Foundation Library** and **Magnetics** components.
+- Used an **Electromagnetic Converter (EC)** block to connect electrical and magnetic domains.
+- Included nonlinear magnetic reluctance to represent the core’s behavior.
+
+### 4️⃣ Simulation Scenarios
+- **Open-circuit and short-circuit tests** were conducted to determine equivalent circuit parameters.
+- Various load resistances were simulated to observe:
+  - Flux waveform (\( \Phi \))
+  - Input and output voltages (\( V_{in}, V_{out} \))
+  - Input and output currents (\( I_{in}, I_{out} \))
+  - Effects of leakage inductance and core saturation.
+
+### 5️⃣ Data Analysis
+- Compared simulation results with theoretical calculations.
+- Verified that the transformer’s turn ratio and flux density matched design specifications.
+- Analyzed reasons for any waveform distortions or deviations.
+
+---
 
 ## 📈 Transformer Circuit Diagram
-Here is the schematic diagram of the simulated transformer:
+The following diagram illustrates the Simulink model of the transformer used in this project:
 
 ![Transformer Circuit Diagram](transformer_circuit_diagram.png)
 
-## ⚠️ Important Notes
-- Ensure **both electrical sides are grounded** in Simulink.
-- Use a **Magnetic Reference** and a **Solver Configuration** block for simulation stability.
-- **Run the simulation for at least 0.1s** (equivalent to 5 cycles at 50Hz).
-- Use **Simulink-PS Converter** and **PS-Simulink Converter** for signal conversion between physical and normal signals.
-- Pay attention to **MMF source polarity** to prevent unstable simulation behavior.
+---
 
-## 📈 Deliverables
-- MATLAB files including:
-  - Magnetic curve fitting functions.
-  - Simulink model files (.slx).
-- PDF report detailing:
-  - Transformer design calculations.
-  - Simulink model diagrams.
-  - Simulation results and waveform analyses.
+## ⚠️ Key Considerations
+- Both electrical sides were grounded for stable simulation.
+- Proper solver configuration was set with a simulation time of at least 0.1s (5 cycles at 50Hz).
+- Used **Simulink-PS Converter** and **PS-Simulink Converter** for interfacing physical and normal signals.
+- Ensured correct MMF source polarity to prevent unstable behavior.
 
-## 📅 Submission Deadline
-- **Date**: Ordibehesht 30, 23:55
-- **Format**: Submit both PDF report and MATLAB files to the course platform.
-
-## 💡 Tips for Success
-- Make sure all parts of the model are correctly grounded and configured.
-- Analyze the reasons for non-sinusoidal behavior if observed.
-- Ensure the design adheres to the selected core’s properties and fits the practical expectations.
+---
 
 ### 👥 Contributors
 - **Amir Shahang**

@@ -64,9 +64,7 @@ Here is the schematic diagram of the simulated transformer:
 - Ensure the design adheres to the selected core’s properties and fits the practical expectations.
 
 ### 👥 Contributors
-- **Behzad Shayegh**
-- **Aref Afzali**
+- **Amir Shahang**
+- **Helia Zolghadr**
 
----
 
-Happy simulating! 🚀

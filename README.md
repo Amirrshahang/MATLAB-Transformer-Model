@@ -18,13 +18,6 @@ The goal of this project is to design and simulate a UI-core transformer with th
 - Selected a UI-core with dimensions determined by the project requirements.
 - The core’s BH curve was extracted from provided data and mathematically fitted using exponential functions in MATLAB.
 
-### Winding Design
-- Calculated the number of turns (N) and core cross-sectional area (A) using:
-$$
-  V_{\text{rms}} = 4.44 \times N \times f \times A \times B_{\text{max}}
-  $$
-  - Chose a maximum flux density \( B_{max} = 0.9 \) T and frequency \( f = 50 \) Hz.
-
 ### Simulink Model Development
 - Built the transformer model in Simulink using **Simscape – Foundation Library** and **Magnetics** components.
 - Used an **Electromagnetic Converter (EC)** block to connect electrical and magnetic domains.
@@ -33,9 +26,9 @@ $$
 ### Simulation Scenarios
 - **Open-circuit and short-circuit tests** were conducted to determine equivalent circuit parameters.
 - Various load resistances were simulated to observe:
-  - Flux waveform (\( \Phi \))
-  - Input and output voltages (\( V_{in}, V_{out} \))
-  - Input and output currents (\( I_{in}, I_{out} \))
+  - Flux waveform 
+  - Input and output voltages
+  - Input and output currents
   - Effects of leakage inductance and core saturation.
 
 ### Data Analysis
